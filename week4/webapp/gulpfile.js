@@ -1,13 +1,13 @@
 // Gulp 4
 
-const { src, dest, series } = require('gulp');
-const minifyCSS = require('gulp-csso');
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
-const inject = require('gulp-inject');
-const removeCode = require('gulp-remove-code');
-var sourcemaps = require('gulp-sourcemaps');
-var watch = require('gulp-watch');
+const { src, dest, series } = require('./node_modules/gulp');
+const minifyCSS = require('./node_modules/gulp-csso');
+const concat = require('./node_modules/gulp-concat');
+const uglify = require('./node_modules/gulp-uglify');
+const inject = require('./node_modules/gulp-inject');
+const removeCode = require('./node_modules/gulp-remove-code');
+var sourcemaps = require('./node_modules/gulp-sourcemaps');
+var watch = require('./node_modules/gulp-watch');
 
 function html() {
   return src(['*.html'])
