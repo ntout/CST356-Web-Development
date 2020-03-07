@@ -6,9 +6,10 @@
                 <th>Student ID</th>
                 <th>Email Address</th>
             </tr>
-            <tr v-for="student in students" :key="student.Id">
-                <td>{{ student.studentId }}</td>
+            <tr v-for="student in students" :key="student.Id" >
+                <td v-bind:class="{ special: student.special }">{{ student.studentId }}</td>
                 <td>{{ student.emailAddress }}</td>
+                <td>{{ student.special }}></td>
             </tr>
         </table>
     </div>
@@ -27,6 +28,7 @@
                 operation: 'list',
                 studentId: undefined,
                 emailAddress: undefined,
+                special: undefined,
                 apiServer: process.env.VUE_APP_API_SERVER
             }
         },
@@ -64,8 +66,6 @@
             this.operation = 'list'
         }
     }   
-
-    //var students = '[{"id": 10001, "email": "joe@aol.com"},{"id": 10002, "email": "jim@juno.com"},{"id": 10003, "email": "susan@aol.com"},{"id": 10004, "email": "sarah@gmail.com"}]'
 </script>
 
 
@@ -74,5 +74,9 @@
         padding: 10px;
         border: 2px solid black; 
         border-collapse: collapse;
+    }
+
+    .odd {
+        background: aquamarine;
     }
 </style>
